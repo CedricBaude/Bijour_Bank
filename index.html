@@ -26,39 +26,24 @@
             <option value="debit">-</option>
           </select>
         </div>
+
         <div>
           <label for="titre"><small>champ obligatoire</small></label>
-          <input
-            type="text"
-            name="titre"
-            id="titre"
-            placeholder="titre de l'opération"
-            required
-          />
+          <input type="text" name="titre" id="titre" placeholder="titre de l'opération" required />
         </div>
         <div>
           <input type="text" name="desc" id="desc" placeholder="description" />
         </div>
+
         <div>
           <label for="montant"><small>champ obligatoire</small></label>
-          <input
-            type="number"
-            name="montant"
-            id="montant"
-            placeholder="indiquer un montant"
-            required
-          />
+          <input type="number" name="montant" id="montant" placeholder="indiquer un montant" required />
         </div>
         <div class="text-center">
           <button type="submit" class="btSubmit">👊</button>
         </div>
       </form>
-      <button
-        class="close-button"
-        data-close
-        aria-label="Close modal"
-        type="button"
-      >
+      <button class="close-button" data-close aria-label="Close modal" type="button">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
@@ -75,9 +60,9 @@
           <div class="cell">
             <div>
               <nav class="navHeader">
-                <a href="#" class="active">Tout</a>
-                <a href="#">Crédit</a>
-                <a href="#">Débit</a>
+                <a href="#" id="all_tab" class="active">Tout</a>
+                <a href="#" id="credit_tab">Crédit</a>
+                <a href="#" id="debit_tab">Débit</a>
               </nav>
             </div>
           </div>
