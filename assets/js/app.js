@@ -61,7 +61,7 @@ all_tab.addEventListener("click",function(){
 //const desc = document.querySelector("#desc");
 //const montant = document.querySelector("#montant");
 
-
+// * -- Recuperation des données via le formulaire -- * 
 const div = document.querySelector("#data");
 
     
