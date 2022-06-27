@@ -55,3 +55,29 @@ all_tab.addEventListener("click",function(){
         credit_tab.removeAttribute("class");
         debit_tab.removeAttribute("class");
 })
+
+//const operator = document.querySelector("#operator");
+//const titre = document.querySelector("#titre");
+//const desc = document.querySelector("#desc");
+//const montant = document.querySelector("#montant");
+
+
+const div = document.querySelector("#data");
+
+    
+let formulaire = document.getElementById("operationForm");
+formulaire.addEventListener("submit", function (e) {
+    e.preventDefault();
+        const overlay = document.querySelector(".reveal-overlay");
+        overlay.style.display = "none";
+
+    let operator = document.querySelector("#operator").value;
+    let titre = document.querySelector("#titre").value;
+    let desc = document.querySelector("#desc").value;
+    let montant = document.querySelector("#montant").value;
+
+    let values = [ operator, titre, desc, montant ]
+    document.querySelector("#data").innerHTML += values;
+    formulaire.reset();
+});
+

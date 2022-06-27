@@ -17,7 +17,7 @@
   <body>
     <div class="small reveal" id="exampleModal1" data-reveal>
       <h2>Ajouter une opération</h2>
-      <form action="#" id="operationForm">
+      <form action="#" id="operationForm"  >
         <div>
           <label for="operator"><small>champ obligatoire</small></label>
           <select name="operator" id="operator" required>
@@ -40,10 +40,10 @@
           <input type="number" name="montant" id="montant" placeholder="indiquer un montant" required />
         </div>
         <div class="text-center">
-          <button type="submit" class="btSubmit">👊</button>
+          <button type="submit" class="btSubmit" >👊</button>
         </div>
       </form>
-      <button class="close-button" data-close aria-label="Close modal" type="button">
+      <button class="close-button" data-close aria-label="Close modal" type="button"  >
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
@@ -70,7 +70,7 @@
       </div>
     </header>
     <main>
-      <div class="grid-container">
+      <div class="grid-container" id="afficher"> 
         <!-- operation -->
         <div class="operation credit">
           <div class="grid-x grid-padding-x align-middle">
@@ -186,6 +186,7 @@
     <div class="add">
       <button class="button" data-open="exampleModal1">+</button>
     </div>
+    <div class="grid-container" id="data"></div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="./assets/js/dataGraph.js"></script>
