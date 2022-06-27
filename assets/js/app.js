@@ -76,8 +76,15 @@ formulaire.addEventListener("submit", function (e) {
     let desc = document.querySelector("#desc").value;
     let montant = document.querySelector("#montant").value;
 
-    let values = [ operator, titre, desc, montant ]
-    document.querySelector("#data").innerHTML += values;
+    let values = [ operator, titre, desc, montant ];
+    
+    if(operator === "credit"){
+        document.querySelector("#data").innerHTML += values+"<br>";
+    }
+    
+
     formulaire.reset();
 });
+
+
 
