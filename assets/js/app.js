@@ -77,9 +77,38 @@ formulaire.addEventListener("submit", function (e) {
     let montant = document.querySelector("#montant").value;
 
     let values = [ operator, titre, desc, montant ];
+
+    const template = `
+        <div class="operation ${operator}">
+        <div class="grid-x grid-padding-x align-middle">
+        <div class="cell shrink">
+        <div class="picto">
+        `;
+    const template_credit = `<img src="./assets/images/sac-dargent.png" alt="credit" />`
+    const template_debit = `<img src="./assets/images/depenses.png" alt="credit" />`
+    const template2 =
+        `</div>
+        </div>
+        <div class="cell auto">
+        <div>
+        <h2>${titre}</h2>
+        <small>${desc}</small>
+        </div>
+        </div>
+        <div class="cell small-3 text-right">
+        <div>
+        <p class="count">${montant}` + "€" + `</p>
+
+        </div>
+        </div>
+        </div>
+        </div>`
     
     if(operator === "credit"){
-        document.querySelector("#data").innerHTML += values+"<br>";
+        document.querySelector("#data").innerHTML += template + template_credit + template2;
+    }
+    if(operator === "debit"){
+        document.querySelector("#data").innerHTML += template + template_debit + template2;
     }
     
 
