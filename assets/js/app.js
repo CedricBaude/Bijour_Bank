@@ -125,7 +125,33 @@ if(operator == "debit"){
     generateData();
 }
 
-    let sold_text = document.getElementById("sold_text");
+// * -- Gestion du message de solde -- * 
+
+let sold_text = document.getElementById("sold_text");
+if (Number(solde_total) < 100 ){
+    sold_text.innerHTML = "On est dans la merde, c'est la déche !" 
+    sold_text.style.color="red"
+}
+else if (Number(solde_total) < 300 ){
+    sold_text.innerHTML = "Faut se bouger !" 
+    sold_text.style.color="orange"
+}
+
+else if (Number(solde_total) < 600 ){
+    sold_text.innerHTML = "Ca va, pour l'instant .. " 
+    sold_text.style.color="green"
+}
+else if (Number(solde_total) < 1000 ){
+    sold_text.innerHTML = "On est tranquille pour le moment. " 
+    sold_text.style.color="green"
+}
+
+else {
+    sold_text.innerHTML = "On est bien 😀"
+    sold_text.style.color="olive"
+}
+
+
     formulaire.reset();
     refresh();
 
