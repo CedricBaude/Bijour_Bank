@@ -6,7 +6,7 @@ $(document).ready(function () {
   $(document).foundation();
 });
 
-// * -- Affichage des onglets -- * 
+// * -- Gestion de l'affichage des onglets -- * 
 
 const credit_tab = document.querySelector("#credit_tab");
 credit_tab.addEventListener("click", function(){
@@ -56,21 +56,16 @@ all_tab.addEventListener("click",function(){
         debit_tab.removeAttribute("class");
 })
 
-//const operator = document.querySelector("#operator");
-//const titre = document.querySelector("#titre");
-//const desc = document.querySelector("#desc");
-//const montant = document.querySelector("#montant");
 
-// * -- Recuperation des données via le formulaire -- * 
 const div = document.querySelector("#data");
 let solde = document.getElementById("solde");
 
 const total_value = solde.textContent;
 const total_slice = total_value.slice(0, total_value.length - 4);
 const total = total_slice.replace(" ", "");
-const solde_total = Number(total);
+let solde_total = Number(total);
 
-
+// * -- Recuperation des données via le formulaire -- * 
     
 let formulaire = document.getElementById("operationForm");
 formulaire.addEventListener("submit", function (e) {
@@ -84,16 +79,11 @@ formulaire.addEventListener("submit", function (e) {
     let montant = document.querySelector("#montant").value;
 
     pourcent = Number((montant * 100) / solde_total).toFixed(2);
-
-    
-
     let values = [ operator, titre, desc, montant ];
-
-
-
-
+    
     
 // * -- Création de variable template ( Merci Adrien <3) -- * 
+
     const template = `
         <div class="operation ${operator}">
         <div class="grid-x grid-padding-x align-middle">
@@ -118,22 +108,30 @@ formulaire.addEventListener("submit", function (e) {
         </div>
         </div>
         </div>`
-    
-    if(operator === "credit"){
-        
-        document.querySelector("#data").innerHTML += template + template_credit + template2;
-        
-        
 
-        
-    }
-    if(operator === "debit"){
-        document.querySelector("#data").innerHTML += template + template_debit + template2;
-        
-    }
+// * -- Création des nouvelles opérations + calcul du solde -- * 
 
+if(operator == "credit"){
+    document.querySelector("#data").innerHTML += template + template_credit + template2;
+    solde_total = Number(solde_total) + Number(montant);
+    document.querySelector("#solde").innerHTML= solde_total+"€"
+    generateData();
+}
+
+if(operator == "debit"){
+    document.querySelector("#data").innerHTML += template + template_debit + template2;
+    solde_total = Number(solde_total) - Number(montant);
+    document.querySelector("#solde").innerHTML= solde_total+"€"
+    generateData();
+}
+
+    let sold_text = document.getElementById("sold_text");
     formulaire.reset();
+    refresh();
+
 });
+
+
 
 
 
