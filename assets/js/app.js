@@ -17,7 +17,7 @@ credit_tab.addEventListener("click", function(){
 
     let credits = document.getElementsByClassName('credit');
     for (let i = 0; i < credits.length; i++) {
-    credits[i].style.display="contents"}
+        credits[i].style.display="contents"}
     
     credit_tab.setAttribute("class", "active");
     all_tab.removeAttribute("class");
@@ -29,7 +29,7 @@ debit_tab.addEventListener("click", function(){
 
     let credits = document.getElementsByClassName('credit');
     for (let i = 0; i < credits.length; i++) {
-    credits[i].style.display="none"}
+        credits[i].style.display="none"}
 
     let debits = document.getElementsByClassName('debit');
     for (let i = 0; i < debits.length; i++) {
@@ -45,7 +45,7 @@ all_tab.addEventListener("click",function(){
 
     let credits = document.getElementsByClassName('credit');
     for (let i = 0; i < credits.length; i++) {
-    credits[i].style.display="contents"}
+        credits[i].style.display="contents"}
 
     let debits = document.getElementsByClassName('debit');
     for (let i = 0; i < debits.length; i++) {
@@ -60,6 +60,8 @@ all_tab.addEventListener("click",function(){
 const div = document.querySelector("#data");
 let solde = document.getElementById("solde");
 
+// * -- Recuperation et formatage du solde en nombre -- * 
+
 const total_value = solde.textContent;
 const total_slice = total_value.slice(0, total_value.length - 4);
 const total = total_slice.replace(" ", "");
@@ -70,8 +72,8 @@ let solde_total = Number(total);
 let formulaire = document.getElementById("operationForm");
 formulaire.addEventListener("submit", function (e) {
     e.preventDefault();
-        const overlay = document.querySelector(".reveal-overlay");
-        overlay.style.display = "none";
+    const overlay = document.querySelector(".reveal-overlay");
+    overlay.style.display = "none";
 
     let operator = document.querySelector("#operator").value;
     let titre = document.querySelector("#titre").value;
